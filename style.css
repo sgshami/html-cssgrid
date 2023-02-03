@@ -1,0 +1,228 @@
+/* Border box declaration 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+/* inherit border-box on all elements in the universe and before and after
+ */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Geneva, sans-serif;
+}
+a {
+  color: #2772b0;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 10px;
+  width: 97%;
+  max-width: 1200px;
+  margin: 0 auto;
+  float: none;
+  background-color: #ffffff;
+}
+
+div img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 225px;
+}
+
+h3{
+  text-align: center;
+}
+
+/* grid system -- mobile first! */
+/* flex contatiner */
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* attribute selector to give some margin between columns and apply styles to flex items */
+
+[class*="col-"] {
+  margin: 1%;
+  flex: 0 0 100%;
+  padding: 10px;
+}
+
+/* Add background colors to see how much space each column is taking */
+.intro1, .intro2, .intro3, .intro4, .ebike{
+  background-color: #a9a9a9;
+}
+
+.main1, .main2{
+      background-color: #ff3b3f;
+}
+
+.special1, .special2, .people1, .people2, .col-6{
+      background-color: #efefef;
+}
+
+.use1, .use2, .use3{
+      background-color: #caebf2;
+}
+
+/* Tablet Landscape Screen Sizes */
+@media only screen and (min-width: 480px) {
+  .col-6 {
+    flex: 0 0 48%;
+  }
+  .intro1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 10px;
+  }
+  .intro2 {
+    padding: 10px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .intro3 {
+    padding: 10px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .intro4 {
+    padding: 10px;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .main1 {
+    padding: 10px;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .main2 {
+    padding: 10px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  .special1 {
+    padding: 10px;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+  .special2 {
+    padding: 10px;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+  .ebike {
+    padding: 10px;
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+  }
+  .use1 {
+    padding: 10px;
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+  }
+  .use2 {
+    padding: 10px;
+    grid-column: 1 / 3;
+    grid-row: 7 / 8;
+    background-color: #caebf2;
+  }
+  .use3 {
+    padding: 10px;
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+    background-color: #caebf2;
+  }
+  .people {
+    grid-column: 1 / 3;
+    grid-row: 10 / 11;
+  }
+  
+  .people1{
+    grid-column: 1 / 2;
+    grid-row: 9 / 10;
+    justify-content: center;
+  }
+  
+  .people2{
+    grid-column: 2 / 3;
+    grid-row: 9 / 10;
+    justify-content: center;
+  }
+}
+/* Desktop screen Sizes */
+@media only screen and (min-width: 768px) {
+  .intro1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .intro2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .intro3 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
+  .intro4 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+  }
+  .main1 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+  .main2 {
+    grid-column: 3 / 5;
+    grid-row: 2 / 3;
+  }
+  .special1 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  .special2 {
+    grid-column: 2 / 5;
+    grid-row: 3 / 4;
+  }
+  .ebike {
+    grid-column: 1 / 5;
+    grid-row: 4 / 5;
+  }
+  .use1 {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+  .use2 {
+    grid-column: 2 / 4;
+    grid-row: 5 / 6;
+  }
+  .use3 {
+    grid-column: 4 / 5;
+    grid-row: 5 / 6;
+  }
+  .people {
+    grid-column: 2 / 6;
+    grid-row: 6 / 8;
+  }
+  .people1{
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    justify-content: center;
+  }
+  
+  .people2{
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+    justify-content: center;
+  }
+  .col-6 {
+    flex: 0 0 23%;
+  }
+}
